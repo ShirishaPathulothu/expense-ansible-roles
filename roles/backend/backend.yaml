@@ -1,0 +1,6 @@
+- name: expense roles backend configure
+  hosts: backend
+  become: yes
+  roles:
+  - backend
+  
