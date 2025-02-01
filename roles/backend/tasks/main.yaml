@@ -31,11 +31,11 @@
   - depolyment  
 
 - name: install dependencies
+  tags:
+  - deployment
   ansible.builtin.command: npm install
   args:
-    chdir: /app
-  tags:
-  - deployment  
+    chdir: /app  
 
 - name: copy backend service 
   ansible.builtin.template: 
@@ -52,9 +52,10 @@
     state: import
 
 - name: daemon reload
+  tags:
+  - deployment
   ansible.builtin.systemd_service:
     daemon_reload: true
     name: backend
     state: restarted
-  tags:
-  - deployment  
+    
