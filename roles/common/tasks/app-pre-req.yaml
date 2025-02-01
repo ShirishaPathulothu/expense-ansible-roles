@@ -6,7 +6,7 @@
 
 - name: create a  app directory
   ansible.builtin.file:
-    path: /app
+    path: "{{app_location}}"
     state: directory
 
 - name: "download {{component}} code"
