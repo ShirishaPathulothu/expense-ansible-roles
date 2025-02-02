@@ -1,8 +1,6 @@
 - name: expense roles frontend configure
   hosts: frontend
   become: yes
-  vars_files:
-  - /var/expense/credentials_mysql.yaml
   roles:
   - frontend
   
